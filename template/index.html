@@ -1,0 +1,27 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    <title>Shortner</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Shortner</h1>
+        <hr>
+        <br>
+        <form action="{%url 'generate'%}" method="post">
+            {%csrf_token%}
+            <label for="url">Url: </label>
+            <input type="url" name="url"><br>
+            <input type="submit" value="Generate URL.">
+        </form>
+    </div>
+</body>
+
+</html>

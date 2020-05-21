@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Short.me</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand" href="#">Short.me</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#">ForkMe</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        {% if genratedUrl != None %}
+            <h1 class="text-center">Here is your Shorten Url</h1>
+            <h4 class="text-center">{{genratedUrl}}</h4>
+            <div>
+            <p class="text-center"></p><button class="btn btn-primary" type="button" onclick="redirect()"> Copy</button></div>
+            {% else %}
+            <p class="text-center"> Go back </p>
+
+        {% endif %}
+        <!-- <h1 class="text-center">Here is your Shorten Url</h1>
+        <h4 class="text-center">{{url}}</h4>
+        <div>
+            <p class="text-center"></p><button class="btn btn-primary" type="button" onclick="redirect()"> Copy</button></div> -->
+    </div>
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.css' %}"></script>
+
+    <!-- <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
+</body>
+<script>
+    function redirect() {
+
+    const url = "{{genratedUrl}}";
+    window.location = url;
+    }
+</script>
+</html>
