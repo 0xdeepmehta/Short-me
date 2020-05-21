@@ -25,7 +25,7 @@ SECRET_KEY = 'e^b^_+1=5cvl&$0gahyapu!fz!et8sxfn1i!!=jz8zqtk1q$9y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['shorit.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
