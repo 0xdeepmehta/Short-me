@@ -24,13 +24,30 @@
         </div>
     </nav>
     <div>
-        {% if genratedUrl != None %}
+        <div class="container">
+
+        {% if genratedUrl %}
             <h1 class="text-center">Here is your Shorten Url</h1>
-            <h4 class="text-center">{{genratedUrl}}</h4>
+            <!-- <h6 class="text-center">http://127.0.0.1:8000/{{genratedUrl}}</h6> -->
+                                <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon3">Your Beautiful Short URL</span>
+                        </div>
+                        <input type="url" name="url" value="http://127.0.0.1:8000/{{genratedUrl}}" class="form-control meshorturl" id="basic-url">
+                        <!-- <button> copy Me</button> -->
+                        <div class="input-group-append">
+                            <div classs="tooltip">
+    <button class="btn btn-outline-secondary" id="button-addon2" onclick="copyMe()">Copy Me</button>
+                                
+                                
+                            </div>
+  </div>
+                      </div>
+            <!-- <input type="text" value="http://127.0.0.1:8000/{{genratedUrl}}" id="myInput"> -->
             <div>
-            <p class="text-center"></p><button class="btn btn-primary" type="button" onclick="redirect()"> Copy</button></div>
+            <button class="btn btn-primary" type="button" onclick="redirect()">Visit</button></div>
             {% else %}
-            <p class="text-center"> Go back </p>
+            <!-- <p class="text-center"> Visit </p> -->
 
         {% endif %}
         <!-- <h1 class="text-center">Here is your Shorten Url</h1>
@@ -38,6 +55,7 @@
         <div>
             <p class="text-center"></p><button class="btn btn-primary" type="button" onclick="redirect()"> Copy</button></div> -->
     </div>
+     </div>
     <!-- <script src="assets/js/jquery.min.js"></script> -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.css' %}"></script>
@@ -45,6 +63,23 @@
     <!-- <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
 </body>
 <script>
+
+    function copyMe() {
+  /* Get the text field */
+    let copyText = document.getElementsByClassName('meshorturl')[0].value
+    // let copyelement = element.textcontent;
+    navigator.clipboard.writeText(copyText);
+  /* Select the text field */
+  //   copyText.select();
+  //   copyText.setSelectionRange(0, 99999); For mobile devices
+
+  // /* Copy the text inside the text field */
+  //   document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText);
+} 
+
     function redirect() {
 
     const url = "{{genratedUrl}}";

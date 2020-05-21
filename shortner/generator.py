@@ -3,7 +3,7 @@ import random
 
 characters = string.ascii_letters + "_"
 
-def generate(n=5):
+def shortUrl(n=5):
     """
     Here n, represents the length of 
     randomly generated string. By def. you're gonna
