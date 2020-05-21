@@ -20,4 +20,4 @@ try:
 	def addUrlsFromDb(url):
 	    urlpatterns.append(path(url.url_id, UrlView.as_view(url=url.url)))
 except OperationalError:
-	pass
+	print('hey! IM back')
